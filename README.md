@@ -1,5 +1,8 @@
-## heartbloom
+[![Heartbloom Lamp](https://i.imgur.com/TOn8VLo.png "Heartbloom Lamp")](http://i.imgur.com/TOn8VLo.png "Heartbloom Lamp")
+
 Long-distance friendship lamps cost hundreds of dollars, just to light up an LED somewhere to let your loved one know you're thinking of them. We thought, why not spend hundreds of minutes building a work of art instead, to send a sentiment with more **heart**? And so heartbloom was born! By firing off a text message to Heartbloom Bot from anywhere in the world, you can let your special someone know that you're on their mind.
+
+
 
 ## How we built it
 Your favourite person activates heartbloom by sending a text message to our Telegram bot, [Heartbloom Bot](http://t.me/heartbloombot "heartbloombot"). When heartbloombot receives a message, our Pipedream webhook (connected to the bot) is triggered, which then makes an HTTP request to a webserver running wirelessly on an ESP32 board on the heartbloom lamp. Upon reception of the request, the servo motor activates to momentarily "bloom", or open the petals of the stunning flower lamp we built completely from scratch.
@@ -17,5 +20,3 @@ Run `ngrok.exe http [ipAddress]:80` after opening ngrok, replacing `[ipAddress]`
 
 ## Resources used
 Working with servos on the esp32: https://dronebotworkshop.com/esp32-servo/
-
-
