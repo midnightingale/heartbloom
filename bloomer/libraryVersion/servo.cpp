@@ -1,6 +1,3 @@
-#include <Arduino.h>
-#include <ESP32Servo.h>
-
 #define SERVO_PIN 18
 #define BLOOM_DURATION 5000 //low number for testing purposes, change later
 

@@ -1,4 +1,3 @@
-#include <WiFiConfig.h> // Angela's network config, stored in my local Arduino/libraries/Configuration folder
 
 void connectToWiFi(){
   WiFi.mode(WIFI_STA);

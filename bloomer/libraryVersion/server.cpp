@@ -36,7 +36,6 @@ void readClient(WiFiClient client){
 }
 
 void runServer(){
- Serial.println("Running server...");
  WiFiClient client = server.available();   // listen for incoming clients
  if (client) {                             
     Serial.println("New client!");
