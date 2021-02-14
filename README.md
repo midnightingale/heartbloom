@@ -20,3 +20,5 @@ Run `ngrok.exe http [ipAddress]:80` after opening ngrok, replacing `[ipAddress]`
 
 ## Resources used
 Working with servos on the esp32: https://dronebotworkshop.com/esp32-servo/
+
+**made with love by sophie liu & angela wilks**
