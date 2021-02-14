@@ -17,6 +17,8 @@ void openBloom() {
     bloomerServo.write(bloomerPosition);
     delay(15);
   }
+  delay(BLOOM_DURATION);
+  closeBloom();
 }
 
 void closeBloom() {
