@@ -6,8 +6,9 @@ void setup() {
   Serial.begin(115200);
   connectToWiFi();
   setupServo();
+  runServer();
 }
 
 void loop(){
-  runServer();
+  
 }

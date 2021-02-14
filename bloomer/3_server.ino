@@ -1,51 +1,19 @@
-/*
- WiFi Web Server 
+#include "ESPAsyncWebServer.h"
 
- A simple web server that lets us control the servo via the web.
- If the IP address of your shield is myAddress:
- http://myAddress/bloom opens the flower
+AsyncWebServer server(80);
+const char HTML[] PROGMEM = "<h1>hello world, time to bloom!</h1>";
 
- Based on the Wifi Web Server code by Tom Igoe, created for arduino 2012/11/25,
- and ported by Jan Hendrik Berlin for sparkfun esp32 2017/01/31 
- and modified by Sophie Liu for the heartbloom project, 2021/02/13
- */
-
-WiFiServer server(80);
-
-void readClient(WiFiClient client){
-  String currentLine = ""; 
-  char c = client.read();             
-  Serial.write(c);
-  
-  if (c == '\n') {                    
-    if (currentLine.length() == 0) {
-      // an empty currentLine indicates the end of the request, so we send a response
-      client.println("HTTP/1.1 200 OK\n");
-      return;
-    } else { // clear currentLine:
-      currentLine = "";
-    }
-  } 
-  else if (c != '\r') {    // received anything but a carriage return character,
-    currentLine += c;      // add it to the end of the currentLine
-  }
-  
-  if (currentLine.endsWith("PUT /bloom")) {
-    openBloom();
-  }
-}
 
 void runServer(){
- Serial.println("Running server...");
- WiFiClient client = server.available();   // listen for incoming clients
- if (client) {                             
-    Serial.println("New client!");
-    while (client.connected()) {            
-      if (client.available()) {             
-        readClient(client);
-      }
-    }
-    client.stop(); // close the connection:
-    Serial.println("Client disconnected.");
-  }
+  server.on("/bloom", HTTP_PUT, [](AsyncWebServerRequest *request){
+    request->send(200, "text/plain", "Put route");
+    openBloom();
+  });
+
+  server.on("/bloom", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(200, "text/html", HTML);
+  });
+  
+  server.begin();
+  Serial.println("Running server...");
 }

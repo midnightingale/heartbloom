@@ -2,21 +2,20 @@
 #include <ESP32Servo.h>
 
 #define SERVO_PIN 18
-#define BLOOM_DURATION 5000 //low number for testing purposes, change later
+#define BLOOM_DURATION 1000 //low number for testing purposes, change later
 
 Servo bloomerServo;
 int bloomerPosition = 0;
-bool bloomOpen = false;
 
 void closeBloom() {
-  for (bloomerPosition = 180; bloomerPosition >= 0; bloomerPosition -= 1) { // goes from 180 degrees to 0 degrees
+  for (bloomerPosition = 0; bloomerPosition <= 180; bloomerPosition += 1) { 
     bloomerServo.write(bloomerPosition);
     delay(15);
   }
 }
 
 void openBloom() {
-  for (bloomerPosition = 0; bloomerPosition <= 180; bloomerPosition += 1) { // goes from 0 degrees to 180 degrees
+  for (bloomerPosition = 180; bloomerPosition >= 0; bloomerPosition -= 1) { 
     bloomerServo.write(bloomerPosition);
     delay(15);
   }
