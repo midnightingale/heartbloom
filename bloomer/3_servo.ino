@@ -7,10 +7,9 @@ int bloomerPosition = 0;
 bool bloomOpen = false;
 
 void setup() {
-  Serial.begin(115200);
   bloomerServo.attach(SERVO_PIN, 500, 2400);
-  bloomerPosition = 10;
-  bloomerServo.write(10);
+  bloomerPosition = 0;
+  bloomerServo.write(0);
 }
 
 void openBloom() {
@@ -25,9 +24,4 @@ void closeBloom() {
     bloomerServo.write(bloomerPosition);
     delay(15);
   }
-}
-
-void loop() {
-  
-  
 }
