@@ -1,7 +1,7 @@
 [![Heartbloom Lamp](https://i.imgur.com/TOn8VLo.png "Heartbloom Lamp")](http://i.imgur.com/TOn8VLo.png "Heartbloom Lamp")
 
 *Heartbloom won third place and best hardware hack at Hackthrob, hosted by Major League Hacking! [Check out the project demo on devpost](https://devpost.com/software/heartbloom "devpost").*
-Check out the project demo on 
+
 Long-distance friendship lamps cost hundreds of dollars, just to light up an LED somewhere to let your loved one know you're thinking of them. We thought, why not spend hundreds of minutes building a work of art instead, to send a sentiment with more **heart**? And so heartbloom was born! By firing off a text message to Heartbloom Bot from anywhere in the world, you can let your special someone know that you're on their mind.
 
 
